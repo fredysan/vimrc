@@ -26,12 +26,27 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+  " let Vundle manage Vundle, required
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'justinmk/vim-sneak'
+  Plugin 'morhetz/gruvbox'
+  Plugin 'tpope/vim-commentary'
+  Plugin 'michaeljsmith/vim-indent-object'
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
+set smartcase
+set nu
 
 " Enable filetype plugins
 filetype plugin on

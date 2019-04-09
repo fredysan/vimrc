@@ -25,6 +25,13 @@
 "    -> Helper functions
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Installation:
+"
+" wget -cO - https://raw.githubusercontent.com/fredysan/vimrc/master/vimrcs/basic.vim > ~/.vimrc
+"
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible              " be iMproved, required
 filetype off                  " required

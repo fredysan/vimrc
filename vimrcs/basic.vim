@@ -38,14 +38,24 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-  " let Vundle manage Vundle, required
-  Plugin 'VundleVim/Vundle.vim'
-  Plugin 'justinmk/vim-sneak'
-  Plugin 'morhetz/gruvbox'
-  Plugin 'tpope/vim-commentary'
-  Plugin 'michaeljsmith/vim-indent-object'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'justinmk/vim-sneak'
+Plugin 'morhetz/gruvbox'
+Plugin 'tpope/vim-commentary'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'wellle/targets.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'valloric/youcompleteme'
+Plugin 'scrooloose/nerdtree'
+Plugin 'thaerkh/vim-workspace'
+Plugin 'tpope/vim-fugitive'
+
+" Plugin 'kana/vim-textobj-user'
+  " Plugin 'julian/vim-textobj-brace'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -72,6 +82,11 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
+
+map <F3> :NERDTreeToggle<CR>
+let g:NERDTreeWinPos = "right"
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,7 +176,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme gruvbox
 catch
 endtry
 
@@ -210,7 +225,7 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
+set nowrap "No Wrap lines
 
 
 """"""""""""""""""""""""""""""
@@ -260,12 +275,16 @@ nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 
-" Opens a new tab with the current buffer's path
+" Opens a new tab with the current 's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+nmap c( ci(
+nmap v( vi(
+nmap d( di(<Esc>
 
 " Specify the behavior when switching between buffers 
 try
@@ -295,10 +314,10 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+execute "set <A-j>=\ej"
+execute "set <A-k>=\ek"
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
 
 if has("mac") || has("macunix")
   nmap <D-j> <M-j>
@@ -333,7 +352,6 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -348,6 +366,21 @@ map <leader>x :e ~/buffer.md<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Macros
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Conver Use statement into a protected definition.
+let @u = 'm10wvt;"1y class
+$o
+/**
+1 definition.o
+@var \1 $
+/oprotected $;`1'
+
+imap 8 '
+imap 9 "
+imap 4 $
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

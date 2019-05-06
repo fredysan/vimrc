@@ -21,10 +21,7 @@
 "    -> Editing mappings
 "    -> vimgrep searching and cope displaying
 "    -> Spell checking
-"    -> Misc
-"    -> Helper functions
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"    -> Misc "    -> Helper functions " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Installation:
 "
 " wget -cO - https://raw.githubusercontent.com/fredysan/vimrc/master/vimrcs/basic.vim > ~/.vimrc
@@ -50,8 +47,9 @@ Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdtree'
 Plugin 'thaerkh/vim-workspace'
 Plugin 'tpope/vim-fugitive'
+Plugin 'evidens/vim-twig'
 
-" Plugin 'kana/vim-textobj-user'
+  " Plugin 'kana/vim-textobj-user'
   " Plugin 'julian/vim-textobj-brace'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -79,7 +77,7 @@ let mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
@@ -267,7 +265,7 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>t<leader> :tabnext
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -377,10 +375,6 @@ $o
 1 definition.o
 @var \1 $
 /oprotected $;`1'
-
-imap 8 '
-imap 9 "
-imap 4 $
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

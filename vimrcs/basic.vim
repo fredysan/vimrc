@@ -45,7 +45,6 @@ Plugin 'wellle/targets.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdtree'
-Plugin 'thaerkh/vim-workspace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'evidens/vim-twig'
 
@@ -62,6 +61,7 @@ filetype plugin indent on    " required
 set history=500
 set smartcase
 set nu
+set ttimeoutlen=50
 
 " Enable filetype plugins
 filetype plugin on
@@ -86,6 +86,7 @@ let g:NERDTreeWinPos = "right"
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+let g:sneak#use_ic_scs = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface

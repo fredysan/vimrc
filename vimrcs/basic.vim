@@ -369,13 +369,6 @@ map <leader>pp :setlocal paste!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Macros
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Conver Use statement into a protected definition.
-let @u = 'm10wvt;"1y class
-$o
-/**
-1 definition.o
-@var \1 $
-/oprotected $;`1'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

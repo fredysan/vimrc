@@ -29,7 +29,7 @@
 "   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "
 " * Neovim
-"   wget -cO - https://raw.githubusercontent.com/fredysan/vimrc/master/vimrcs/basic.vim > ~/.config/nvim/nvim.init
+"   wget -cO - https://raw.githubusercontent.com/fredysan/vimrc/master/vimrcs/basic.vim > ~/.config/nvim/init.vim
 "   mkdir -p ~/.config/nvim/bundle
 "   git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 "
@@ -48,7 +48,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'wellle/targets.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'evidens/vim-twig'

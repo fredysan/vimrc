@@ -24,9 +24,14 @@
 "    -> Misc "    -> Helper functions " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Installation:
 "
-" wget -cO - https://raw.githubusercontent.com/fredysan/vimrc/master/vimrcs/basic.vim > ~/.vimrc
+" * VIM
+"   wget -cO - https://raw.githubusercontent.com/fredysan/vimrc/master/vimrcs/basic.vim > ~/.vimrc
+"   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" * Neovim
+"   wget -cO - https://raw.githubusercontent.com/fredysan/vimrc/master/vimrcs/basic.vim > ~/.config/nvim/nvim.init
+"   mkdir -p ~/.config/nvim/bundle
+"   git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
